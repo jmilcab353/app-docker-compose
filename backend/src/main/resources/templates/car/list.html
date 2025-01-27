@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- Car list-->
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="content" class="centrado">
+    <div class="container m-4">
+        <h1>Listado de Coches</h1>
+        <a href="/cars/new" class="btn btn-primary mb-3">Añadir Coche</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="car : ${cars}">
+                    <td th:text="${car.brand}">Marca</td>
+                    <td th:text="${car.model}">Modelo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="content" class="centrado-v">
+    <div class="container m-4 text-center">
+        <h1 class="text-danger">¡Vaya! Algo ha fallado.</h1>
+        <p class="text-secondary">No hemos podido procesar tu petición ahora mismo. Por favor, inténtelo de nuevo.</p>
+
+            <img th:src="@{/images/sadgrogu.png}" alt="Sad Grogu" class="img-fluid mt-3 rotante" width="100" height="auto">
+
+        <div class="mt-4">
+            <p th:if="${timestamp}">
+                <strong>Hora de la petición:</strong> <span th:text="${timestamp}"></span>
+            </p>
+            <p th:if="${status}">
+                <strong>Código de estado (status code):</strong> <span th:text="${status}"></span>
+            </p>
+            <p th:if="${error}">
+                <strong>Error:</strong> <span th:text="${error}"></span>
+            </p>
+            <p th:if="${message}">
+                <strong>Mensaje:</strong> <span th:text="${message}"></span>
+            </p>
+            <p th:if="${path}">
+                <strong>Ruta de la petición:</strong> <span th:text="${path}"></span>
+            </p>
+        </div>
+        <a href="/" class="btn btn-primary mt-3">Volver a inicio</a>
+    </div>
+</div>

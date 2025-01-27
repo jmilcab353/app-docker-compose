@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- View product details -->
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="content" class="centrado">
+    <div class="container m-4">
+        <h1>Detalles del Producto</h1>
+        <div class="mb-3">
+            <label class="form-label"><strong>ID:</strong></label>
+            <span th:text="${product.id}"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Título:</strong></label>
+            <span th:text="${product.title}"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Precio:</strong></label>
+            <span th:text="${product.price}"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Cantidad:</strong></label>
+            <span th:text="${product.quantity}"></span>
+        </div>
+        <a href="/products" class="btn btn-secondary">Volver al Listado</a>
+    </div>
+</div>

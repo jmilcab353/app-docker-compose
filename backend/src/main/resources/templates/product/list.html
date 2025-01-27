@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Product list -->
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="content" class="centrado-v">
+    <div class="container m-4">
+        <h1>Listado de Productos</h1>
+        <a href="/products/new" class="btn btn-primary mb-3">Añadir Producto</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <!-- <th>Precio</th>
+                    <th>Cantidad</th> -->
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.id}"></td>
+                    <td th:text="${product.title}"></td>
+                    <!-- <td th:text="${product.price}"></td>
+                    <td th:text="${product.quantity}"></td> -->
+                    <td>
+                        <a class="btn btn-primary" th:href="@{/products/{id}/view(id=${product.id})}">Ver detalles</a>
+                        <a class="btn btn-success" th:href="@{/products/{id}/edit(id=${product.id})}">Editar</a>
+                        <a class="btn btn-danger" th:href="@{/products/{id}/delete(id=${product.id})}">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container m-4">
+        <h2>Productos con un precio superior a 900 euros</h2>
+        <ul>
+            <li th:each="product : ${expensiveProducts}">
+                <a th:href="@{/products/{id}/view(id=${product.id})}" th:text="${product.title}"></a>
+            </li>
+        </ul>
+    </div>
+</div>

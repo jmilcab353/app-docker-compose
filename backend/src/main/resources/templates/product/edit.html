@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- Edit product -->
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="content" class="centrado">
+    <div class="container m-4">
+        <h1>Editar Producto</h1>
+        <form th:action="@{/products/{id}/edit(id=${product.id})}" method="post" class="mb-3">
+            <div class="mb-3">
+                <label for="title" class="form-label">Título</label>
+                <input type="text" id="title" name="title" class="form-control" th:value="${product.title}" required>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Precio</label>
+                <input type="text" id="price" name="price" class="form-control" th:value="${product.price}" required>
+            </div>
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Cantidad</label>
+                <input type="text" id="quantity" name="quantity" class="form-control" th:value="${product.quantity}"
+                    required>
+            </div>
+            <button type="submit" class="btn btn-success">Guardar Cambios</button>
+        </form>
+        <a href="/products" class="btn btn-secondary">Volver al Listado</a>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+main {
+    background-color: rgb(240, 240, 240);
+}
+
+.rotante {
+    transition: transform 1s ease-in-out;
+    /* Smooth transition effect */
+}
+
+.rotante:hover {
+    transform: rotate(360deg);
+    /* Full rotation */
+}
