@@ -46,10 +46,11 @@ docker compose ps
 
 - **Frontend**: El frontend estará disponible en el puerto **80** de tu máquina local (localhost:80).
 - **Backend**: El backend estará disponible en el puerto **9000** de tu máquina local (localhost:9000).
+- **DB**: La base de datos estará disponible en el puerto **3306**.
 
 Puedes acceder al frontend desde cualquier cliente y yendo a `http://localhost` o `http://localhost:80`. El backend estará disponible en `http://localhost:9000`.
 
-**(!) Importante:** Asegúrate de que no estás utilizando el puerto 80 o 9000 en tu máquina local.
+**(!) Importante:** Asegúrate de que no estás utilizando los puertos 80, 9000 y 3306 en tu máquina local. 
 
 ## 5) Detener los contenedores
 

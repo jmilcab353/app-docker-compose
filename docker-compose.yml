@@ -16,12 +16,13 @@ services:
       - "80:80"
 
   db:
-    image: mysql:latest
+    image: jmilcab353/db:latest
+    # image: mysql:latest
     container_name: mysql-container
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: demo
     ports:
       - "3306:3306"
-    volumes:
-      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    # volumes:
+    #   - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
